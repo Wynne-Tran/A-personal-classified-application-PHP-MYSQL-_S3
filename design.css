@@ -1,0 +1,149 @@
+html, body{
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    margin-top: 0px;
+    width: 100%;
+    
+    overflow: hidden;
+    background-color: #333;
+}
+footer {
+    list-style-type: none;
+    margin-bottom: 0px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #333;
+    height: 150px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.titlename {
+    
+    display: block;
+    color: white;
+    text-align: center;
+    
+    font-weight: bold;
+    font-style: Italic;
+    font-size: 1.1em;
+    
+}
+.button{
+    background-color: cyan;
+    width: 150px;
+    height: 30px;
+}
+.login{
+    float: right;
+    margin-right: 30px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-style: Italic;
+    font-size: 1em;
+}
+.items {
+    width: 70%;
+    float: right;
+    
+}
+.catalog{
+    width: 20%;
+    float: left;
+    border-style: solid;
+    border-color: black;
+    margin-left: 2em;
+
+}
+.catalog tr td{
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+}
+.catalog a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.catalog a:hover {
+    background-color: #111;
+    color: white;
+
+}
+caption{
+    font-style: Italic;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    z-index: 1;
+    width:113px;
+    height:auto;
+    margin:0;
+    padding:0;
+    }
+.dropdown:hover .dropdown-content {display: block;}
+span{
+    color: red;
+}
+
+.modify{
+    width: 120px;
+    height: 30px;
+    background-color: limegreen;
+    border-radius: 5px;
+}
+.modify2{
+    width: 60px;
+    height: 30px;
+    background-color: limegreen;
+    border-radius: 5px;
+}
+.delete{
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+button{
+    width: 120px;
+    height: 30px;
+    background-color: limegreen;
+    border-radius: 5px;
+}
+
+textarea{
+    width: 300px;
+    height: 100px;
+}
+.btnprice{
+    display: none;
+};
