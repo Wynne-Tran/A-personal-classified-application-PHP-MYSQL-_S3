@@ -128,7 +128,7 @@ include_once 'class/items.php';
         $category = new Categories();
         $result1 = $category->getAllCat();
         while( $row1 = $result1->fetch_assoc() ){ ?>
-            <option><?php $id = $row1['id']; echo $id;?></option>
+            <option><?php $id = $row1['id']; echo $id?></option>
             <?php
             
         }

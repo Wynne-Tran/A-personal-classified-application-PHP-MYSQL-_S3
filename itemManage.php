@@ -128,7 +128,20 @@ include 'inc/functions.php';
     <td><textarea name='descrip'><?=$item_info['descrip']?></textarea></td>
     </tr>
     <tr><td>Category: </td>
-    <td><input type='text' name='cat_id' value="<?=$item_info['cat_id']?>"></td>
+   
+    <td>
+    <select  name='cat_id'>
+        <?php
+        $category = new Categories();
+        $result1 = $category->getAllCat();
+        while( $row1 = $result1->fetch_assoc() ){ ?>
+            <option><?php $id = $row1['id']; echo $id ;?></option>
+            <?php
+            
+        }
+        ?>
+    </select>
+    </td>
     </tr>
     <tr><td>Status:</td>
     <td>SHOW<input type = 'radio' name = 'status' value = "1">

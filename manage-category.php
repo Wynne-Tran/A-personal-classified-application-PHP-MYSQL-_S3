@@ -1,22 +1,23 @@
 <?php session_start();
 include 'inc/functions.php';
 include_once 'class/items.php';
-?>
-<?php
-    include_once __DIR__. '/class/items.php';
-    
+
     $category = new Categories();
+    $items = new Items();
     $category_info = $category->getByIdCat($_REQUEST['id'])->fetch_assoc();
     
     if(empty($category_info)) die('cannot access');
     if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'delete')
     {
-        ?> <script>alert ("Category  deleted...");</script>
+        ?> 
+        <script>alert("Category and all its items deleted...");</script>
         
         <?php
-        $category->query('delete from catagory where id = ' . $_REQUEST['id']);
+        $result1 = $items->getAll()->fetch_assoc();
+        $items->query('delete from items where cat_id = ' . $_REQUEST['id']);
+        $category->query('delete from category where id = ' . $_REQUEST['id']);
         
-        header('location: adminCategories.php');
+        header('location: admin.php');
     }
     if(isset($_REQUEST['action']) && $_REQUEST['action'] == 'save')
     {

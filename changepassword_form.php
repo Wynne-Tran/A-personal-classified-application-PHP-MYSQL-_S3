@@ -7,12 +7,13 @@ checkMaintain();
 
 if(isset($_POST['change'])){
     $member = new Members();
+    $count = 0;
         $result = $member->getAllMem();
         while( $row = $result->fetch_assoc() ){
             if($row['username'] == $_REQUEST['username'] && $row['password'] == $_REQUEST['oldpass']) {
                  
                 $query = sprintf("Update %s set 
-                
+
                 first_name = '%s', 
                 last_name = '%s',
                 username = '%s',
@@ -21,28 +22,29 @@ if(isset($_POST['change'])){
                 memberscol  = '%s'
                 where id = %d",
                  Members::$table_name,
+                 
                   $row['first_name'],
                   $row['last_name'],
                   $row['username'],
                   $row['email'],
                   $_REQUEST['newpass'],
                   $row['memberscol'],
-                   $row['id']             
+                  $row['id'],
                                 );
-        //echo $query;
+                
                 $member->query($query);
-                ?> <script>alert ("Password changed!");</script>
+                ?> 
+                <script>alert ("Password changed!");</script>
                 <?php 
-                header("Location:admin.php");
+                $count++;
+                break;
             }
             
-            else{
-                ?>
-            <script>alert  ("Username or old password incorrect !");</script>
+        }
+        if ($count == 0){
+            ?>
+                <script>alert  ("Username or old password incorrect !");</script>
             <?php 
-            break;
-            }
-        
         }
   
 }
@@ -82,7 +84,7 @@ if(isset($_POST['change'])){
         </tr>
         <br>
         <tr>
-        <td><input type="submit" name = "change" value="Change"></td>
+        <td><input type="submit" name= "change" value="Change"></td>
         </tr>
         
     </table>

@@ -277,6 +277,7 @@ function get_categories(){
            <td><a href='manage-category.php?id=%d'>Edit</a> |
            <a href='manage-category.php?id=%d&action=delete'>Delete</a></td>
            
+           
         </tr>", $row['id'], $row['name'],$row['descrip'], $count, $row['status'],$row['id'],$row['id']); 
             } 
         ?> 

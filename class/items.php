@@ -39,7 +39,7 @@ class Categories extends Db{
     protected static $fields = array(
                                     'id'   => '',
                                     'name' => '',
-                                    'desc' => '',
+                                    'descrip' => '',
                                     'images' => 'none.jpg',
                                     'status' => '1'
                                     );
